@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 align="center">Habits Tracker</h1>
+
+<form method="POST">
+    <select name="habit" id="habit" class="form-control">
+        <option value="">--Select or Enter New Habit--</option>
+        {% for habit in unique_habits %}
+            <option value="{{ habit }}">{{ habit }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="habit_new" id="habit_new" class="form-control mt-2" placeholder="Or Enter New Habit Here">
+    <select name="mood" id="mood" class="form-control mt-2">
+        <option value="1">1 - Very Poor</option>
+        <option value="2">2 - Poor</option>
+        <option value="3">3 - Average</option>
+        <option value="4">4 - Good</option>
+        <option value="5">5 - Excellent</option>
+    </select>
+    <input type="date" name="date_of_entry" id="date_of_entry" class="form-control mt-2">
+    <input type="text" name="comments" id="comments" class="form-control mt-2" placeholder="Comments">
+    <br />
+    <button type="submit" class="btn btn-primary">Add Habit</button>
+</form>
+<script src="/static/index.js"></script>
+
+<table class="table">
+  <thead>
+      <tr>
+          <th>Habit ID</th>
+          <th>Habit</th>
+          <th>Mood Rating</th>
+          <th>Date</th>
+          <th>Comments</th>
+          <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for habit in habits %}
+      <tr style="background-color: {{ 'hsl(' ~ (24 * (habit.mood - 1)) ~ ', 100%, 80%)' }}">
+          <td>{{ habit.id }}</td>
+          <td contenteditable="true" data-habit-id="{{ habit.id }}" data-field="name">{{ habit.name }}</td>
+          <td contenteditable="true" data-habit-id="{{ habit.id }}" data-field="mood">{{ habit.mood }}</td>
+          <td contenteditable="true" data-habit-id="{{ habit.id }}" data-field="date">{{ habit.date_of_entry }}</td>
+          <td contenteditable="true" data-habit-id="{{ habit.id }}" data-field="comments">{{ habit.comments }}</td>
+          <td>
+              <button type="button" class="btn btn-primary save-edit" data-habit-id="{{ habit.id }}">Save</button>
+              <button type="button" class="btn btn-danger" onclick="deleteHabit({{ habit.id }})">Delete</button>
+          </td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
