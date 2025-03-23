@@ -1,7 +1,3 @@
-from pathlib import Path
-
-# Define the README content
-readme_content = """
 # 🧠 Habit Tracking WebApp
 
 ## 🌐 Overview
@@ -20,7 +16,7 @@ We have deployed the application on PythonAnywhere:
 ## 📁 GitHub Repository
 
 Find the full source code, reports, and database here:  
-📂 **[ADT-Project GitHub Repo](https://github.com/rutujajangle/ADT-Project)**
+📂 **[Hait-tracker GitHub Repo](https://github.com/rutujajangle/Habit-tracker)**
 
 ---
 
@@ -102,11 +98,3 @@ The main goal of this project is to create a user-friendly and insightful habit 
     - `NOT NULL` constraints for essential fields
 
 ---
-
-## 🚀 How to Run Locally
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/rutujajangle/ADT-Project.git
-   cd ADT-Project
