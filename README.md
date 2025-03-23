@@ -16,7 +16,7 @@ We have deployed the application on PythonAnywhere:
 ## 📁 GitHub Repository
 
 Find the full source code, reports, and database here:  
-📂 **[Hait-tracker GitHub Repo](https://github.com/rutujajangle/Habit-tracker)**
+📂 **[Habit-tracker GitHub Repo](https://github.com/rutujajangle/Habit-tracker)**
 
 ---
 
